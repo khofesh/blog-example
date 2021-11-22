@@ -34,3 +34,34 @@ kubectl exec -it posts -- sh
 ```
 
 `kubectl exec -it posts sh` is deprecated
+
+## access nodePort services
+
+```sh
+[fahmad@ryzen blog]$ kubectl describe service posts-srv
+Name:                     posts-srv
+Namespace:                default
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=posts
+Type:                     NodePort
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.96.97.204
+IPs:                      10.96.97.204
+Port:                     posts  4000/TCP
+TargetPort:               4000/TCP
+NodePort:                 posts  32442/TCP
+Endpoints:                172.17.0.4:4000
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+```
+
+```shell
+[fahmad@ryzen blog]$  minikube ip
+192.168.49.2
+```
+
+then, open `http://192.168.49.2:32442/posts` in browser

@@ -83,3 +83,7 @@ minikube start --profile custom
 skaffold config set --global local-cluster true
 eval $(minikube -p custom docker-env)
 ```
+
+## ingress nginx
+
+https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/

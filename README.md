@@ -65,3 +65,21 @@ Events:                   <none>
 ```
 
 then, open `http://192.168.49.2:32442/posts` in browser
+
+## skaffold
+
+install
+
+```sh
+# For Linux x86_64 (amd64)
+curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
+sudo install skaffold /usr/local/bin/
+```
+
+https://skaffold.dev/docs/quickstart/
+
+```sh
+minikube start --profile custom
+skaffold config set --global local-cluster true
+eval $(minikube -p custom docker-env)
+```

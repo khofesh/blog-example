@@ -81,7 +81,7 @@ https://skaffold.dev/docs/quickstart/
 ```sh
 minikube start --profile custom
 skaffold config set --global local-cluster true
-eval $(minikube -p custom docker-env)
+eval $(minikube -p minikube docker-env)
 ```
 
 ## ingress nginx
